@@ -1,0 +1,114 @@
+﻿<tr class="contactDetails hideContactDetails">
+    <td colspan="7">
+        <div>
+            <table class="detailsTable">
+                <tr>
+                    <td id="leftColumn">
+                        <div class="labelText">Name:</div>
+                        <div class="dataValue dataValueBig">@Page.Contact.Name</div>
+                        <div class="labelText">Account Executive:</div>
+                        <div class="dataValue dataValueBig">@Page.Contact.AccountExecutive</div>
+                        <div class="labelText">Address:</div>
+                        <div class="dataValue dataValueBig">@Page.Contact.AddressLine1</div>
+                        <div class="dataValue dataValueBig">@Page.Contact.AddressLine2</div>
+                        <div class="dataValue dataValueBig">@Page.Contact.AddressLine3</div>
+                        <table class="detailsTable">
+                            <tr>
+                                <td class="subData">
+                                    <div class="labelText">Branch Code:</div>
+                                    <div class="dataValue dataValueSmall">@Page.Contact.BranchCode</div>
+
+                                </td>
+                                <td class="subData">
+                                    <div class="labelText">Local Branch Code:</div>
+                                    <div class="dataValue dataValueSmall">@Page.Contact.LocalBranchCode</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="subData">
+                                    <div class="labelText">Ledger Code:</div>
+                                    <div class="dataValue dataValueSmall">@Page.Contact.LedgerCode</div>
+
+                                </td>
+                                <td class="subData">
+                                    <div class="labelText">Retail/Wholesale:</div>
+                                    <div class="dataValue dataValueSmall">@Page.Contact.RetailWholesale</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="subData">
+                                    <div class="labelText">Operation:</div>
+                                    <div class="dataValue dataValueSmall">@Page.Contact.Operation</div>
+
+                                </td>
+                                <td class="subData">
+                                    <div class="labelText">Contact Method:</div>
+                                    <div class="dataValue dataValueSmall">@Page.Contact.ContactMethod</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="subData">
+                                    <div class="labelText">Commence Date:</div>
+                                    <div class="dataValue dataValueSmall">
+                                        @{
+                                            if (Page.Contact.CommenceDate != null)
+                                            {
+                                                @String.Format("{0:dd/MM/yyyy}", Page.Contact.CommenceDate)
+                                            }
+                                        }
+                                        
+                                    </div>
+
+                                </td>
+                                <td class="subData">
+                                    <div class="labelText">Contact Preference:</div>
+                                    <div class="dataValue dataValueSmall">@Page.Contact.ContactPreference</div>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td id="rightColumn">
+                        <div class="labelText">Team Code:</div>
+                        <div class="dataValue dataValueBig">@Page.Contact.TeamCode</div>
+                        <table class="detailsTable">
+                            <tr>
+                                <td class="subData">
+                                    <div class="labelText">Next Renewal Date:</div>
+                                    <div class="dataValue dataValueSmall">
+                                        @{
+                                            if (Page.Contact.NextRenewalDate != null)
+                                            {
+                                                @String.Format("{0:dd/MM/yyyy}", Page.Contact.NextRenewalDate)
+                                            }
+                                        }
+                                    </div>
+
+                                </td>
+                                <td class="subData">
+                                    <div class="labelText">Last Transaction Date:</div>
+                                    <div class="dataValue dataValueSmall">
+                                        @{
+                                            if (Page.Contact.LastTransactionDate != null)
+                                            {
+                                                @String.Format("{0:dd/MM/yyyy}", Page.Contact.LastTransactionDate)
+                                            }
+                                        }
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                        <div class="labelText">Postal Address:</div>
+                        <div class="dataValue dataValueBig">@Page.Contact.PostalAddressLine1</div>
+                        <div class="dataValue dataValueBig">@Page.Contact.PostalAddressLine2</div>
+                        <div class="dataValue dataValueBig">@Page.Contact.PostalAddressLine3</div>
+                        <div class="labelText">Contact Comments:</div>
+                        <div class="dataValue dataValueBig dataValueTall">@Page.Contact.ContactComments</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </td>
+</tr>
+
+
+

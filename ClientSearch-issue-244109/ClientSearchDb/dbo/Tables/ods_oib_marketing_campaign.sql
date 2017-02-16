@@ -1,0 +1,26 @@
+﻿CREATE TABLE [dbo].[ods_oib_marketing_campaign] (
+    [m_firstname]    VARCHAR (500) NULL,
+    [m_lastname]     VARCHAR (500) NULL,
+    [m_businessname] VARCHAR (500) NULL,
+    [m_address]      VARCHAR (500) NULL,
+    [m_suburb]       VARCHAR (500) NULL,
+    [m_state]        VARCHAR (500) NULL,
+    [m_postcode]     VARCHAR (500) NULL,
+    [m_paddress]     VARCHAR (500) NULL,
+    [m_psuburb]      VARCHAR (500) NULL,
+    [m_pstate]       VARCHAR (500) NULL,
+    [m_ppostcode]    VARCHAR (500) NULL,
+    [m_offphone]     VARCHAR (500) NULL,
+    [m_ahphone]      VARCHAR (500) NULL,
+    [m_fax]          VARCHAR (500) NULL,
+    [m_mobile]       VARCHAR (500) NULL,
+    [m_email]        VARCHAR (500) NULL,
+    [m_field1]       VARCHAR (500) NULL,
+    [m_field2]       VARCHAR (500) NULL,
+    [m_field3]       VARCHAR (500) NULL,
+    [m_field4]       VARCHAR (500) NULL,
+    [m_field5]       VARCHAR (500) NULL,
+    [m_field6]       VARCHAR (500) NULL,
+    [m_field7]       VARCHAR (500) NULL
+);
+

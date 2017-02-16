@@ -1,0 +1,26 @@
+﻿CREATE TABLE [dbo].[stg_marketing_campaign_in] (
+    [Member First Name] NVARCHAR (255) NULL,
+    [Member Surname]    NVARCHAR (255) NULL,
+    [TradingName]       NVARCHAR (255) NULL,
+    [Address]           NVARCHAR (255) NULL,
+    [Suburb]            NVARCHAR (255) NULL,
+    [State]             NVARCHAR (255) NULL,
+    [Postcode]          NVARCHAR (255) NULL,
+    [PostalAddress]     NVARCHAR (255) NULL,
+    [PostalSuburb]      NVARCHAR (255) NULL,
+    [PostalState]       NVARCHAR (255) NULL,
+    [PostalPostcode]    NVARCHAR (255) NULL,
+    [Phone]             NVARCHAR (255) NULL,
+    [AfterHoursPhone]   NVARCHAR (255) NULL,
+    [Fax]               NVARCHAR (255) NULL,
+    [Mobile]            NVARCHAR (255) NULL,
+    [Email]             NVARCHAR (255) NULL,
+    [F1]                NVARCHAR (255) NULL,
+    [f2]                NVARCHAR (255) NULL,
+    [f3]                NVARCHAR (255) NULL,
+    [f4]                NVARCHAR (255) NULL,
+    [f5]                NVARCHAR (255) NULL,
+    [f6]                NVARCHAR (255) NULL,
+    [f7]                NVARCHAR (255) NULL
+);
+

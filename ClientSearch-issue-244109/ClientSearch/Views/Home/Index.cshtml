@@ -1,0 +1,132 @@
+﻿@model ClientSearch.Models.ClientSearchViewModel
+
+@{
+    ViewBag.Title = "Client Search";
+    var grid = new WebGrid(source: Model.SearchResults, canSort: false, canPage: false);
+
+}
+
+<div>
+    <div style="margin-bottom:12px;">
+        <img src="~/Images/search-icon-01.jpg" style="width:40px;" />
+        <span style="margin-left:10px;font-family:'Segoe UI';font-weight:bold;font-size:30px;">Client Search</span>
+    </div>
+</div>
+
+<div class="jumbotron">
+    @using (Ajax.BeginForm("Index", new AjaxOptions { }))
+    {
+        <div id="normalSearch">
+            <div>
+                @Html.TextBox("txtSearchText", Model.SearchText)
+            </div>
+            <div id="advancedSearch" class="@ViewBag.ShowAdvancedSearch">
+                <table>
+                    <tr>
+                        <td>
+                            <div>Unit</div>
+                            <div>@Html.DropDownList("ddlSearchUnit", Model.SearchUnit)</div>
+                        </td>
+                        <td>
+                            <div>Client Code</div>
+                            <div>@Html.TextBox("txtSearchClientCode", Model.ClientCode)</div>
+                        </td>
+                        <td>
+                            <div>Ledger</div>
+                            <div>@Html.DropDownList("ddlSearchLedger")</div>
+                        </td>
+                        <td>
+                            <div>Address</div>
+                            <div>@Html.TextBox("txtSearchAddress")</div>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div>Underwriter Policy No.</div>
+                            <div>@Html.TextBox("txtSearchUnderWriterPolicyNo")</div>
+                        </td>
+                        <td>
+                            <div>Memo.No.</div>
+                            <div>@Html.TextBox("txtSearchMemoNo")</div>
+                        </td>
+                        <td>
+                            <div>Invoice No.</div>
+                            <div>@Html.TextBox("txtSearchInvoiceNo")</div>
+                        </td>
+                        <td>
+                            <div>Deposit BSB</div>
+                            <div>@Html.TextBox("txtSearchDepositBSB")</div>
+                        </td>
+                        <td>
+                            <div>Deposit Account</div>
+                            <div>@Html.TextBox("txtSearchDepositAccount")</div>
+                        </td>
+                        <td>
+                            <div>@Html.Hidden("hidIsAdvanced")</div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <div style="margin-top: 18px; horiz-align: right">
+                <button>Search</button>
+                <input value="Advanced..." aria-label="Advanced..." name="btnAdvanced" type="button" id="btnAdvanced">
+            </div>
+        </div>
+
+            @Html.HiddenFor(x => x.SortField)
+            @Html.HiddenFor(x => x.SortDirection)
+    }
+</div>
+
+@using (Html.BeginForm("Index", "Home", FormMethod.Post))
+{
+    <div id="displayGrid">
+        @grid.GetHtml(htmlAttributes: new { id = "gridT", width = "100%" },
+            columns: grid.Columns(
+                grid.Column(format: (item) => @RenderPage("~/Views/Home/_ShowHide.cshtml", new { Contact = item })),
+                grid.Column("Unit", "Unit"),
+                grid.Column("LedgerCode", "Ledger"),
+                grid.Column("BranchName", "Branch Name"),
+                grid.Column("ClientCode", "Client Code"),
+                grid.Column("Name", "Client Name"),                
+                grid.Column("AccountExecutive", "Account Exec Code"),
+                grid.Column("AccountExecutiveName", "Account Exec Name"),
+                grid.Column(format: (item) => @RenderPage("~/Views/Home/_ContactDetails.cshtml", new { Contact = item }))
+                )
+            )
+    </div>
+        @Html.HiddenFor(x => x.SearchText, new { @class = "search-text" })
+        @Html.HiddenFor(x => x.SortField, new { @class = "search-sort-field" })
+        @Html.HiddenFor(x => x.SortDirection, new { @class = "search-sort-direction" })
+}
+
+<script>
+    $(document).ready(function () {
+        $(".hoverEff", this).on("click", function () {
+            $(this).parent().closest("tr").next().slideToggle(100);
+            $(this).toggleClass("hideDetails");
+        });
+
+        $("#btnAdvanced", this).on("click", function () {
+            $('#advancedSearch').toggleClass("hideAdvancedSearch");
+            $('#hidIsAdvanced').val($('#advancedSearch').attr('class'));
+        });
+
+        var searchText = $('input.search-text').val();
+
+        $('table#gridT th').each(function (index, element) {
+
+            var columnName = element.innerHTML.trim();
+            var actionUrl = "/home/index" + "?sort=" + columnName + "&sortdir=@Model.SortDirection";
+            if (searchText != null)
+                actionUrl += "&searchText=" + searchText;
+
+            element.innerHTML = '<a href="' + actionUrl + '">' + columnName + '</a>';
+        });
+
+        $('#txtSearchText').focus();
+    });
+
+</script>

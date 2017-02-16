@@ -1,0 +1,25 @@
+﻿CREATE TABLE [dbo].[parmia_dds_dim_executive] (
+    [Ledger_Code]           VARCHAR (100)   NOT NULL,
+    [Executive_Code]        VARCHAR (100)   NOT NULL,
+    [Executive_Name]        VARCHAR (255)   NOT NULL,
+    [Team_Code]             VARCHAR (100)   NOT NULL,
+    [Team_Name]             VARCHAR (255)   NOT NULL,
+    [IsMember]              VARCHAR (10)    NOT NULL,
+    [IsTeamLeader]          VARCHAR (10)    NOT NULL,
+    [Process_Key]           INT             NOT NULL,
+    [Reporting_Branch_Code] VARCHAR (100)   NULL,
+    [Reporting_Branch_Name] VARCHAR (100)   NULL,
+    [Reporting_Region_Code] VARCHAR (100)   NULL,
+    [Reporting_Region_Name] VARCHAR (100)   NULL,
+    [State]                 VARCHAR (50)    NULL,
+    [Title]                 VARCHAR (255)   NULL,
+    [Email]                 VARCHAR (255)   NULL,
+    [ClaimsExec]            VARCHAR (255)   NULL,
+    [Authorised_Rep]        VARCHAR (255)   NULL,
+    [LicenceNumber]         VARCHAR (100)   NULL,
+    [Subagent]              VARCHAR (255)   NULL,
+    [Debtor_Ind]            VARCHAR (255)   NULL,
+    [NewBusinessRate]       DECIMAL (19, 2) NULL,
+    [RenewalRate]           DECIMAL (19, 2) NULL
+);
+

@@ -1,0 +1,127 @@
+﻿body {
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+/*input,
+select,
+textarea {
+    /*max-width: 280px;
+}*/
+
+.row {
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+
+th, td {
+    padding: 5px;
+}
+
+th {
+    background-color: rgb(248, 248, 248);
+}
+
+#gridT, #gridT tr {
+    border: 1px solid #0D857B;
+}
+
+.detailsTable, .detailsTable tr {
+    border: none !important;
+}
+
+/*#subT, #subT tr {
+    border: 1px solid #f3f3f3;
+}*/
+
+/*#subT {
+    margin: 0px 0px 0px 10px;
+    padding: 5px;
+    width: 95%;
+}
+
+    #subT th {
+        font-size: 12px;
+    }*/
+
+
+/* =====================================
+    SHOW/HIDE BUTTONS + FUNCTIONALITY 
+   ===================================== */
+.hoverEff {
+    cursor: pointer;
+    width: 25px;
+    height: 25px;
+}
+
+    .hoverEff:hover {
+        background-color: rgb(248, 242, 242);
+    }
+
+.hideDetails {
+    background-image: url(/Images/pm.png);
+    background-position-x: -22px !important;
+    background-repeat: no-repeat;
+}
+
+.showDetails {
+    background-image: url(/Images/pm.png);
+    background-position-x: -2px;
+    background-repeat: no-repeat;
+}
+
+.hideContactDetails {
+    display: none;
+}
+
+.hideAdvancedSearch {
+    display: none;
+}
+
+#txtSearchText {
+    width: 75%;
+}
+
+#leftColumn, #rightColumn {
+    vertical-align: top;
+}
+
+.dataValue {
+    border: 1px solid #0D857B;
+    padding: 4px;
+    margin-bottom: 12px;
+    background-color: #eeeeee;
+    height: 30px;
+    font-weight: bold;
+}
+
+.dataValueBig {
+    width: 315px;
+}
+
+.dataValueSmall {
+    width: 150px;
+}
+
+.dataValueTall {
+    height: 92px;
+}
+
+.subData {
+    padding: 0px 15px 0px 0px !important;
+}

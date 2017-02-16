@@ -1,0 +1,171 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>ClientSearchDb</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{9f22acde-8b1a-4141-8dd8-a63fa6188507}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql120DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>ClientSearchDb</RootNamespace>
+    <AssemblyName>ClientSearchDb</AssemblyName>
+    <ModelCollation>1033,CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+    <DefaultCollation>Latin1_General_CI_AS</DefaultCollation>
+    <DefaultFilegroup>PRIMARY</DefaultFilegroup>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="dbo\" />
+    <Folder Include="dbo\Tables\" />
+    <Folder Include="dbo\Views\" />
+    <Folder Include="dbo\Functions\" />
+    <Folder Include="dbo\Stored Procedures\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="dbo\Tables\stg_clients_noncompany_matched.sql" />
+    <Build Include="dbo\Tables\utl_job.sql" />
+    <Build Include="dbo\Tables\utl_process.sql" />
+    <Build Include="dbo\Tables\utl_system_option.sql" />
+    <Build Include="dbo\Tables\ods_clients_specific_oib.sql" />
+    <Build Include="dbo\Tables\utl_log.sql" />
+    <Build Include="dbo\Tables\ods_clients_company_matched.sql" />
+    <Build Include="dbo\Tables\ods_clients_matched.sql" />
+    <Build Include="dbo\Tables\ods_clients_matched_prevrun.sql" />
+    <Build Include="dbo\Tables\ods_clients_noncompany_matched.sql" />
+    <Build Include="dbo\Tables\ods_clients_company.sql" />
+    <Build Include="dbo\Tables\cds_oamps_clients_without_Hopewiser.sql" />
+    <Build Include="dbo\Tables\stg_clients_cleansed.sql" />
+    <Build Include="dbo\Tables\ods_clients_basic.sql" />
+    <Build Include="dbo\Tables\ods_clients_basic_rejected.sql" />
+    <Build Include="dbo\Tables\ods_clients_cleansed.sql" />
+    <Build Include="dbo\Tables\tmp_marketing.sql" />
+    <Build Include="dbo\Tables\crm_campaign_history.sql" />
+    <Build Include="dbo\Tables\temp_marketing.sql" />
+    <Build Include="dbo\Tables\ods_oamps_physicalbranch_without_Hopewiser.sql" />
+    <Build Include="dbo\Tables\cds_oamps_clients.sql" />
+    <Build Include="dbo\Tables\ods_oib_nearest_postcode.sql" />
+    <Build Include="dbo\Tables\temp_tas.sql" />
+    <Build Include="dbo\Tables\ods_oib_marketing_campaign1.sql" />
+    <Build Include="dbo\Tables\ods_oib_marketing_campaign.sql" />
+    <Build Include="dbo\Tables\parmia_dds_dim_executive.sql" />
+    <Build Include="dbo\Tables\parmia_dds_fct_client.sql" />
+    <Build Include="dbo\Tables\ods_oib_marketing_campaign_in.sql" />
+    <Build Include="dbo\Tables\ods_oib_marketing_campaign_out.sql" />
+    <Build Include="dbo\Tables\stg_marketing_campaign_in.sql" />
+    <Build Include="dbo\Tables\stg_marketing_campaign_out.sql" />
+    <Build Include="dbo\Tables\ods_clients_matched_exception.sql" />
+    <Build Include="dbo\Tables\ods_clients_noncompany.sql" />
+    <Build Include="dbo\Tables\ods_oamps_accesslevel.sql" />
+    <Build Include="dbo\Tables\ods_oamps_physicalbranch.sql" />
+    <Build Include="dbo\Tables\stg_clients_company_matched.sql" />
+    <Build Include="dbo\Views\ClientView.sql" />
+    <Build Include="dbo\Functions\fun_find_replace.sql" />
+    <Build Include="dbo\Stored Procedures\sp_web_SystemDetails.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\sp_utl_doc_SQLMigration_COLLATE_Latin1_General_CI_AS.sql" />
+    <Build Include="dbo\Stored Procedures\sp_web_UID_from_Clientcode.sql" />
+    <Build Include="dbo\Stored Procedures\sp_web_ClientDetails_by_clientcode.sql" />
+    <Build Include="dbo\Stored Procedures\sp_ods_clients_noncompany.sql" />
+    <Build Include="dbo\Stored Procedures\sp_web_ClientDetails_by_UID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\sp_utl_log_getkey.sql" />
+    <Build Include="dbo\Stored Procedures\sp_ods_clients_company.sql" />
+    <Build Include="dbo\Stored Procedures\sp_utl_log_update.sql" />
+    <Build Include="dbo\Stored Procedures\sp_utl_log_initialise.sql" />
+    <Build Include="dbo\Stored Procedures\sp_utl_log_end.sql" />
+    <Build Include="dbo\Stored Procedures\sp_web_ClientSearch.sql" />
+    <Build Include="dbo\Stored Procedures\sp_cds_oamps_clients.sql" />
+    <Build Include="dbo\Stored Procedures\sp_ods_clients_matched.sql" />
+    <Build Include="dbo\Stored Procedures\sp_ods_clients.sql" />
+    <Build Include="dbo\Stored Procedures\sp_report_duplicate_clients.sql" />
+    <Build Include="dbo\Stored Procedures\sp_report_invalid_addr.sql" />
+    <Build Include="dbo\Stored Procedures\sp_report_ledger_list.sql" />
+    <Build Include="dbo\Stored Procedures\sp_report_ledger_list_all.sql" />
+    <Build Include="dbo\Stored Procedures\sp_report_unit_list.sql" />
+    <Build Include="dbo\Stored Procedures\sp_crm_renewal_clients.sql" />
+    <Build Include="dbo\Stored Procedures\OBSOLETE_sp_crm_customersurvey_reportingdates.sql" />
+    <Build Include="dbo\Stored Procedures\sp_crm_customersurvey_renewals.sql" />
+    <Build Include="dbo\Stored Procedures\sp_crm_customersurvey_sales.sql" />
+    <Build Include="dbo\Stored Procedures\sp_crm_customersurvey_claims.sql" />
+    <Build Include="dbo\Stored Procedures\sp_crm_customersurvey.sql" />
+    <Build Include="dbo\Stored Procedures\sp_cds_oamps_clients_without_Hopewiser.sql" />
+    <Build Include="dbo\Stored Procedures\sp_crm_customersurvey_20130801.sql" />
+    <Build Include="dbo\Stored Procedures\adhoc_marketing_wash_clients .sql" />
+    <Build Include="dbo\Stored Procedures\sp_shiny_ClientSearch.sql" />
+    <Build Include="dbo\Stored Procedures\sp_test_web_ClientSearch.sql" />
+    <Build Include="dbo\Stored Procedures\sp_report_wash_clients.sql" />
+    <Build Include="dbo\Stored Procedures\sp_marketing_wash_clients.sql" />
+    <Build Include="dbo\Stored Procedures\sp_ClientSearch.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DwOamps\DwOamps.sqlproj">
+      <Name>DwOamps</Name>
+      <Project>{37ea17d8-7497-4926-be45-e5fd85fa7030}</Project>
+      <Private>True</Private>
+      <SuppressMissingDependenciesErrors>False</SuppressMissingDependenciesErrors>
+      <DatabaseSqlCmdVariable>DwOamps</DatabaseSqlCmdVariable>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <SqlCmdVariable Include="DwOamps">
+      <DefaultValue>dw_oamps</DefaultValue>
+      <Value>$(SqlCmdVar__1)</Value>
+    </SqlCmdVariable>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClientSearchDb.Prod.publish.xml" />
+    <None Include="ClientSearchDb.Staging.publish.xml" />
+  </ItemGroup>
+</Project>
